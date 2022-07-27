@@ -7,7 +7,7 @@ function App() {
   const [socket, setSocket] = React.useState(0);
   React.useEffect(() => {
     setSocket(
-      io(process.env.REACT_APP_API_URL, {
+      io('https://react-sync-video.herokuapp.com/', {
         withCredentials: true,
       }),
     );
