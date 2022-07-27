@@ -9,9 +9,6 @@ function App() {
     setSocket(
       io(process.env.REACT_APP_API_URL, {
         withCredentials: true,
-        extraHeaders: {
-          'my-custom-header': process.env.REACT_APP_API_URL,
-        },
       }),
     );
   }, []);
