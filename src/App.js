@@ -6,7 +6,14 @@ function App() {
   const videoRef = React.useRef();
   const [socket, setSocket] = React.useState(0);
   React.useEffect(() => {
-    setSocket(io(process.env.REACT_APP_API_URL, { withCredentials: true }));
+    setSocket(
+      io(process.env.REACT_APP_API_URL, {
+        withCredentials: true,
+        extraHeaders: {
+          'my-custom-header': process.env.REACT_APP_API_URL,
+        },
+      }),
+    );
   }, []);
 
   const onClickSync = () => {
