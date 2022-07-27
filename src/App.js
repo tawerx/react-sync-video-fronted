@@ -6,7 +6,7 @@ function App() {
   const videoRef = React.useRef();
   const [socket, setSocket] = React.useState(0);
   React.useEffect(() => {
-    setSocket(io('https://react-sync-video.herokuapp.com/'));
+    setSocket(io(process.env.REACT_APP_API_URL));
   }, []);
 
   const onClickSync = () => {
